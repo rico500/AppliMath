@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "appliMath.h"
 
 int Sommecarre(int n){
 	int p = 0;
@@ -7,19 +8,6 @@ int Sommecarre(int n){
 		p=p+(k*k);
 	}
 	return(p);
-}
-
-int ask_int(char* q){
-        //ask question
-        while(*q != '\0'){
-                printf("%c", *q);
-                q++;
-        }
-
-        //get answer
-        int answer;
-        scanf("%d", &answer);
-        return answer;
 }
 
 int main(void){

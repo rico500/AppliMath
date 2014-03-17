@@ -1,31 +1,8 @@
-/* appliMath.c
- *
- * Compilation de fonctions utiles entre les exercices.
- *
- * UTILISATION:(compile) $ gcc -iquote <lib_path>/ -c <code>.c -o <code>.o
- *             (link)    $ gcc <lib_path>/lib_appliMath.o <code>.o -o <code>
- * AUTHOR: Eric Brunner
- * DATE: 15 mars 2014
+/*
+ * Example d'utilisation de la fonction sum de la librairie lib_appliMath.c
 */
 
 #include <stdio.h>
-
-int factorielle(int n){
-  return((n<=0) ? 1 : n*factorielle(n-1));
-}
-
-int ask_int(char* q){
-	//ask question
-	while(*q != '\0'){
-		printf("%c", *q);
-		q++;
-	}
-
-	//get answer
-	int answer;
-	scanf("%d", &answer);
-	return answer;
-}
 
 /*
  * sum: fait la somme de i jusqu'a n de la fonction avec la vriable k.
@@ -44,4 +21,13 @@ float sum(int n, int i,float (*fctPointer)(int k)){
     p = p + (*fctPointer)(iterator);
   }
   return p;
+}
+
+void main(void){
+  
+  float content(int k){
+  return (k+2)*(k+2);
+  }
+  //prints: 50.000000
+  printf("%f\n", sum(3, 1, &content));
 }

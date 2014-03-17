@@ -1,0 +1,5 @@
+#include "appliMath.h"
+
+void main(void){
+  printf("result: %d", factorielle(9)/(factorielle(3)*factorielle(6)));
+}

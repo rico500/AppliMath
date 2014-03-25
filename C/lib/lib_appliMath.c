@@ -9,6 +9,7 @@
 */
 
 #include <stdio.h>
+#include <math.h>
 
 int factorielle(int n){
   return((n<=0) ? 1 : n*factorielle(n-1));
@@ -45,3 +46,21 @@ float sum(int n, int i,float (*fctPointer)(int k)){
   }
   return p;
 }
+
+
+/*
+ * vérifie si un nombre est premier
+ * PARAM: int n - nombre a vérifier
+ * RETURN: int - 1 si c'est un premier et 0 si ca ne l'est pas.
+ * 
+*/
+int isPremier(int n){
+        int i;
+        for(i = 2; i<=sqrt(n); i++){
+                if(remainder((double)n, (double)i) == 0.0){
+                        return 0;//n'est pas un premier
+                }
+        }
+        return 1;//est un premier
+}
+

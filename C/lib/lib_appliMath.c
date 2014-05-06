@@ -28,6 +28,19 @@ int ask_int(char* q){
 	return answer;
 }
 
+char ask_char(char *q){
+	//ask question
+	while(*q != '\0'){
+		printf("%c", *q);
+		q++;
+	}
+
+	//get answer
+	char answer;
+	scanf("%c", &answer);
+	return answer;
+}
+
 /*
  * sum: fait la somme de i jusqu'a n de la fonction avec la vriable k.
  * AUTHOR: Eric Brunner
@@ -63,4 +76,15 @@ int isPremier(int n){
         }
         return 1;//est un premier
 }
+
+char iToAlpha(int integer){
+	if (integer <= 25 && integer >= 0){
+		return (char)(integer+97);
+	}else{
+		printf("\"%d\" is not a character.", integer);
+		return (char)-1;
+	}
+
+}
+
 
